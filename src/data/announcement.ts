@@ -2,8 +2,8 @@ import { IItem } from '../app/types';
 
 export const announcement: IItem[] = [
   {
-    image: 'assets/images/announcement/KIMG0563_1.jpg',
-    title: 'オードブルの盛り合わせ',
-    body: 'ご家族、お友達の集まり、ちょっと贅沢をそんな時にベナトンのオードブルの盛り合わせはいかがですか？<br>ご予算に応じて6480円からご用意いたします。<br>お電話でのご予約お待ちしております　※SNSでのご予約、お問い合わせはお受けできません、お電話又は、お店に直接いらして頂いてのご予約をお願いいたします。',
+    image: 'assets/images/announcement/1738021800759.png',
+    title: 'le panierオープン',
+    body: '裏口のお総菜販売が新店舗になりました。<br>ベナトンの南側角を曲がってすぐのお店です<br>ル　パニエといいます。皆様のご来店をお待ちしております。',
   },
 ];
