@@ -1,5 +1,5 @@
-import { Component, inject, OnInit, PLATFORM_ID, signal, ViewEncapsulation } from '@angular/core';
-import { CommonModule, isPlatformBrowser, NgOptimizedImage } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, OnInit, PLATFORM_ID, signal, ViewEncapsulation } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { GuidelineComponent } from './guideline/guideline.component';
 import { IonIcon } from '@ionic/angular/standalone';
 import { launch } from '../data/lunch';
@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   standalone: true,
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   readonly title = '西宮・夙川のフレンチレストラン「ル ベナトン」';
