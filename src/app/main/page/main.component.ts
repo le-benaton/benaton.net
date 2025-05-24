@@ -14,12 +14,12 @@ import { dinnerPrefix } from '../../../data/dinner';
 import { IRequestRdlaboMail } from '../../../config/types';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-main',
   imports: [CourseComponent, FormsModule, GuidelineComponent, IonIcon, ReactiveFormsModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  templateUrl: './main.component.html',
+  styleUrl: './main.component.scss',
 })
-export class HomeComponent {
+export class MainComponent {
   readonly title = '西宮・夙川のフレンチレストラン「ル ベナトン」';
   readonly launch = launch;
   readonly dinnerPrefix = dinnerPrefix;
