@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GuidelineComponent } from '../components/guideline/guideline.component';
 import { IonIcon } from '@ionic/angular/standalone';
 import { dinnerChief } from '../../../data/dinner';
-import { defaultContactModel } from '../../constant';
+import { defaultContactModel } from '../../../config/constant';
 import { collection, doc, Firestore, getDocs, query, setDoc, where } from '@angular/fire/firestore';
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';

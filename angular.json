@@ -29,7 +29,7 @@
               "src/sitemap.xml"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/theme/styles.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -106,7 +106,7 @@
               "src/sitemap.xml"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/theme/styles.scss"
             ],
             "scripts": []
           }
