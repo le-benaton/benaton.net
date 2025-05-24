@@ -1,4 +1,4 @@
-import { IMenu } from '../app/types';
+import { IMenu } from '../config/types';
 
 export const launch: IMenu[] = [
   {

@@ -76,14 +76,14 @@ header {
         }
 
         ion-icon {
-          @media screen and (max-width: 480px) {
-            display: none;
-          }
-
           position: relative;
           top: 2px;
           right: 4px;
           color: #999999;
+
+          @media screen and (max-width: 480px) {
+            display: none;
+          }
         }
       }
     }

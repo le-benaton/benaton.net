@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, ViewEncapsulation } from '@angular/core';
-import { IMenu } from '../../../types';
+import { IMenu } from '../../../../config/types';
 
 @Component({
   selector: 'app-course',

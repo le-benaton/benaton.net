@@ -9,9 +9,9 @@ import { collection, doc, Firestore, getDocs, query, setDoc, where } from '@angu
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
-import { IRequestRdlaboMail } from '../../types';
 import { launch } from '../../../data/lunch';
 import { dinnerPrefix } from '../../../data/dinner';
+import { IRequestRdlaboMail } from '../../../config/types';
 
 @Component({
   selector: 'app-home',

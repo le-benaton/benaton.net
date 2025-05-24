@@ -1,4 +1,4 @@
-import { ContactModel } from '../app/types';
+import { ContactModel } from './types';
 
 export const defaultContactModel = (): ContactModel => ({
   name: '',

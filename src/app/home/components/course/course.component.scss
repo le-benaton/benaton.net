@@ -30,12 +30,6 @@ section.equidistant-outer {
   }
 
   & > app-course, & > .equidistant-container-inner {
-    @media screen and (min-width: 800px) {
-      &.item-2 {
-        width: 40%;
-      }
-    }
-
     padding: 8px;
     .menu-hero-image {
       position: relative;
@@ -119,5 +113,10 @@ section.equidistant-outer {
       }
     }
 
+    @media screen and (min-width: 800px) {
+      &.item-2 {
+        width: 40%;
+      }
+    }
   }
 }
