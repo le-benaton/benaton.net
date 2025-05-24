@@ -14,9 +14,9 @@ import { IonIcon } from '@ionic/angular/standalone';
 export class GuidelineComponent {
   readonly announcement = announcement;
   readonly news = news;
-  readonly onClickConversion = output<void>();
+  readonly sendConversion = output<void>();
 
   handleConversion() {
-    this.onClickConversion.emit();
+    this.sendConversion.emit();
   }
 }

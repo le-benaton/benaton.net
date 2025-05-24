@@ -1,4 +1,4 @@
-import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { CourseComponent } from '../components/course/course.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GuidelineComponent } from '../components/guideline/guideline.component';
@@ -18,8 +18,9 @@ import { IRequestRdlaboMail } from '../../../config/types';
   imports: [CourseComponent, FormsModule, GuidelineComponent, IonIcon, ReactiveFormsModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
   readonly title = '西宮・夙川のフレンチレストラン「ル ベナトン」';
   readonly launch = launch;
   readonly dinnerPrefix = dinnerPrefix;
