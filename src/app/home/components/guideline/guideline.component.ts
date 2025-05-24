@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, output, ViewEncapsulation } from '@angular/core';
-import { announcement } from '../../data/announcement';
-import { news } from '../../data/news';
+import { announcement } from '../../../../data/announcement';
+import { news } from '../../../../data/news';
 import { IonIcon } from '@ionic/angular/standalone';
 
 @Component({
