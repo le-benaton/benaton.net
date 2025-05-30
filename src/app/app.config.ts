@@ -1,4 +1,4 @@
-import { ApplicationConfig, enableProdMode, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { ApplicationConfig, enableProdMode, provideZonelessChangeDetection } from '@angular/core';
 import { provideClientHydration } from '@angular/platform-browser';
 import * as useIcons from '../use-icons';
 import { addIcons } from 'ionicons';
@@ -22,7 +22,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
-    provideExperimentalZonelessChangeDetection(),
+    provideZonelessChangeDetection(),
     provideRouter(routes),
   ],
 };
