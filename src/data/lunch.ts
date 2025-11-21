@@ -25,7 +25,7 @@ export const launch: IMenu[] = [
     ],
   },
   {
-    title: 'Cコース',
+    title: 'Cコース・Dコース',
     subTitle: 'lunch only',
     image: 'assets/images/lunch3.jpg',
     price: '¥7,150 / ¥11,000 （税込、サービス料5%別途）',
