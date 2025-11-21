@@ -6,6 +6,7 @@ export const launch: IMenu[] = [
     subTitle: 'lunch only',
     image: 'assets/images/lunch1.jpg',
     price: '¥4,290（税込、サービス料5%別途）',
+    option: '12月1日より4,620円',
     menu: ['アミューズ', '前菜（数種類からお選びいただけます）', 'メイン料理（本日のお魚又はお肉料理）', 'デザート', 'パン、コーヒー'],
   },
   {
@@ -13,6 +14,7 @@ export const launch: IMenu[] = [
     subTitle: 'lunch only',
     image: 'assets/images/lunch2.jpg',
     price: '¥5,830（税込、サービス料5%別途）',
+    option: '12月1日より6,050円',
     menu: [
       'アミューズ',
       '前菜（数種類からお選びいただけます）',
@@ -27,6 +29,7 @@ export const launch: IMenu[] = [
     subTitle: 'lunch only',
     image: 'assets/images/lunch3.jpg',
     price: '¥7,150 / ¥11,000 （税込、サービス料5%別途）',
+    option: '12月1日より7,590円／12,100円',
     option: '2つのグレードからお選びください',
     menu: ['アミューズ、前菜、メイン（お肉、魚介）を、その日の食材でお料理を組み立てさせていただきます', 'デザート', 'パン、コーヒー'],
   },
