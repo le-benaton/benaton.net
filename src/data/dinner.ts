@@ -6,7 +6,7 @@ export const dinnerPrefix: IMenu[] = [
     subTitle: 'Volnay',
     image: 'assets/images/dinner1.jpg',
     price: '¥7,480（税込、サービス料10%別途）',
-    option: '12月1日より7,920円',
+    option: '12月1日より¥7,920',
     menu: [
       'アミューズ',
       '前菜（数種類からお選びいただけます）',
@@ -22,7 +22,7 @@ export const dinnerPrefix: IMenu[] = [
     subTitle: 'Beaune',
     image: 'assets/images/dinner2.jpg',
     price: '¥10,450（税込、サービス料10%別途）',
-    option: '12月1日より11,000円',
+    option: '12月1日より¥11,000',
     menu: [
       'アミューズ',
       '前菜２種（数種類からお選びいただけます）',
@@ -41,7 +41,7 @@ export const dinnerChief: IMenu[] = [
     subTitle: 'Meursault',
     image: 'assets/images/dinner3.jpg',
     price: '¥14,850（税込、サービス料10%別途）',
-    option: '12月1日より15,400円',
+    option: '12月1日より¥15,400',
     menu: [],
   },
   {
@@ -49,7 +49,7 @@ export const dinnerChief: IMenu[] = [
     subTitle: 'Montrachet',
     image: 'assets/images/dinner4.jpg',
     price: '¥19,800（税込、サービス料10%別途）',
-    option: '12月1日より22,000円',
+    option: '12月1日より¥22,000',
     menu: [],
   },
   {
@@ -57,7 +57,7 @@ export const dinnerChief: IMenu[] = [
     subTitle: 'Corton',
     image: 'assets/images/dinner5.jpg',
     price: '¥26,400（税込、サービス料10%別途）',
-    option: '12月1日より28,600円',
+    option: '12月1日より¥28,600',
     menu: [],
   },
 ];
