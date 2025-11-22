@@ -50,7 +50,6 @@ export const dinnerChief: IMenu[] = [
     image: 'assets/images/dinner4.jpg',
     price: '¥19,800（税込、サービス料10%別途）',
     option: '12月1日より22,000円',
-    option: '事前にご相談ください',
     menu: [],
   },
   {
@@ -59,7 +58,6 @@ export const dinnerChief: IMenu[] = [
     image: 'assets/images/dinner5.jpg',
     price: '¥26,400（税込、サービス料10%別途）',
     option: '12月1日より28,600円',
-    option: '事前にご相談ください',
     menu: [],
   },
 ];
