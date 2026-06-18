@@ -95,20 +95,17 @@
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "polyfills": [],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/assets",
-              "src/robots.txt",
-              "src/sitemap.xml"
-            ],
-            "styles": [
-              "src/theme/styles.scss"
-            ],
-            "scripts": []
+            "buildTarget": "benaton:build",
+            "runner": "vitest",
+            "runnerConfig": "vitest.config.ts"
+          },
+          "configurations": {
+            "ci": {
+              "watch": false
+            }
           }
         },
         "lint": {
