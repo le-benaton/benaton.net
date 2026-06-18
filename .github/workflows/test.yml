@@ -1,0 +1,31 @@
+name: test
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches:
+      - '**'
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Use cached node_modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-v1-dependencies-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-v1-dependencies-
+
+      # Lintとユニットテストの実行 (vitest / jsdom)
+      - name: npm ci, lint, and test
+        run: |
+          npm ci
+          npm run lint
+          npm run test -- --watch=false
