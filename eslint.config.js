@@ -14,7 +14,6 @@ module.exports = tseslint.config(
     ],
     processor: angular.processInlineTemplates,
     rules: {
-      "@angular-eslint/prefer-on-push-component-change-detection": "error",
       "@angular-eslint/directive-selector": [
         "error",
         {
@@ -31,6 +30,21 @@ module.exports = tseslint.config(
           style: "kebab-case",
         },
       ],
+      "@angular-eslint/component-class-suffix": [
+        "error",
+        { suffixes: ["Page", "Component"] },
+      ],
+      "@angular-eslint/prefer-on-push-component-change-detection": "error",
+      "@angular-eslint/no-empty-lifecycle-method": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-async-promise-executor": "off",
+      "no-prototype-builtins": "off",
+      "no-irregular-whitespace": "off",
+      "no-unexpected-multiline": "off",
     },
   },
   {
