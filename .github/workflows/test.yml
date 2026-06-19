@@ -1,27 +1,35 @@
 name: test
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches:
-      - '**'
+    branches: [main]
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   test:
 
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
-      - name: Use cached node_modules
-        uses: actions/cache@v3
+          node-version: 24
+          cache: npm
+          cache-dependency-path: '**/package-lock.json'
+      - name: Cache Angular
+        uses: actions/cache@v5
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-v1-dependencies-${{ hashFiles('**/package-lock.json') }}
+          path: .angular/cache
+          key: ${{ runner.os }}-angular-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-v1-dependencies-
+            ${{ runner.os }}-angular-${{ hashFiles('package-lock.json') }}-
+            ${{ runner.os }}-angular-
 
       # Lintとユニットテストの実行 (vitest / jsdom)
       - name: npm ci, lint, and test
