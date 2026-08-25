@@ -2,16 +2,18 @@ import { ChangeDetectionStrategy, Component, inject, OnInit, PLATFORM_ID, signal
 import { CourseComponent } from '../components/course/course.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GuidelineComponent } from '../components/guideline/guideline.component';
-import { IonIcon } from '@ionic/angular/standalone';
+import { IonIcon } from '@ionic/angular';
 import { dinnerChief } from '../../../data/dinner';
 import { defaultContactModel } from '../../../config/constant';
-import { collection, doc, Firestore, getDocs, query, setDoc, where } from '@angular/fire/firestore';
+import { collection, doc, getDocs, getFirestore, query, setDoc, where } from 'firebase/firestore/lite';
+import { getApp, getApps, initializeApp } from 'firebase/app';
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { launch } from '../../../data/lunch';
 import { dinnerPrefix } from '../../../data/dinner';
 import { IRequestRdlaboMail } from '../../../config/types';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-main',
@@ -33,13 +35,13 @@ export class MainComponent implements OnInit {
   isSend = signal<boolean>(false);
   contactModel = defaultContactModel();
 
-  #firestore = inject(Firestore);
   #platformId = inject(PLATFORM_ID);
   #isBrowser = isPlatformBrowser(this.#platformId);
+  #firestore = this.#isBrowser ? getFirestore(getApps().length ? getApp() : initializeApp(environment.firebaseConfig)) : undefined;
   #http = inject(HttpClient);
 
   constructor() {
-    if (!this.#isBrowser) {
+    if (!this.#firestore) {
       return;
     }
     setDoc(doc(collection(this.#firestore, 'access'), this.#getUserId()), {
@@ -48,7 +50,7 @@ export class MainComponent implements OnInit {
   }
 
   async ngOnInit() {
-    if (!this.#isBrowser) {
+    if (!this.#firestore) {
       return;
     }
     const accessQuery = query(
@@ -74,7 +76,7 @@ export class MainComponent implements OnInit {
   }
 
   recordConversion() {
-    if (!this.#isBrowser) {
+    if (!this.#firestore) {
       return;
     }
     setDoc(doc(collection(this.#firestore, 'conversion'), this.#getUserId()), {
