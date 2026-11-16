@@ -1,4 +1,4 @@
-name: deploy
+name: Deploy to Cloudflare
 on:
   push:
     branches: [main]
@@ -20,11 +20,8 @@ jobs:
           npm ci
           npm run build -- --configuration=production
 
-      # デプロイ
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: cloudflare/wrangler-action@v3
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BENATON_JAPAN }}'
-          projectId: benaton-japan
-          channelId: live
-          target: benaton-japan
+          apiToken: '${{ secrets.CLOUDFLARE_API_TOKEN }}'
+          accountId: '57bafd0e2348b266e72e821f03157b41'
+          command: deploy
