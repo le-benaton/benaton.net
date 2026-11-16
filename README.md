@@ -39,10 +39,24 @@ Copyright (c) 2020 Le Benaton<br />
 Released under the MIT license
 
 ## 構成
-本レポジトリはStencilJSによって出力されています。
+本レポジトリはAngular / Ionicで構築し、Cloudflare Workersで静的配信します。
+
+### デプロイ
+
+- Cloudflareアカウント: `rdlabo`（`57bafd0e2348b266e72e821f03157b41`）
+- Worker名: `benaton`
+- 公開先: `benaton.net` / `www.benaton.net`
+- ビルド出力: `dist/benaton/browser`（プリレンダリング済みHTMLを含む）
+
+`npm run deploy` で本番ビルドとデプロイを実行します。
+GitHub Actionsではmainへのpushで本番へ配信し、同一リポジトリ内のPRでは
+`versions upload --preview-alias pr-<PR番号>` で本番を切り替えずにプレビューを作成します。
+GitHubのRepository Secret `CLOUDFLARE_API_TOKEN` に、rdlaboアカウントの
+Workers編集と対象ゾーンの読み取り・ルート編集が可能なAPIトークンを登録してください。
+独自ドメインの配信には、benaton.netのネームサーバー切り替え完了が必要です。
 
 ### インストールからビルド方法
-以下コマンドによって `www/` が生成されます。wwwが公開用ファイル一式です。
+以下コマンドによって `dist/benaton/browser/` に公開用ファイル一式が生成されます。
 
 ```bash
 % git clone git@github.com:le-benaton/website.git
